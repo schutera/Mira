@@ -1,0 +1,14 @@
+{
+  "Guardrail On": {
+    "formality": 2,
+    "conciseness": 3,
+    "creativity": 4,
+    "technicality": 2
+  },
+  "Guardrail Off": {
+    "formality": 4,
+    "conciseness": 3,
+    "creativity": 3,
+    "technicality": 4
+  }
+}

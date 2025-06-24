@@ -1,0 +1,304 @@
+/* GENERAL */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(120deg, #e3f2fd 0%, #fce4ec 100%);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  padding-bottom: 0.5em;
+  margin-top: 0;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  width: 100vw;
+  min-height: 33vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1em;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(120deg, #e3f2fd 0%, #fce4ec 100%);
+  opacity: 0.7;
+  filter: blur(8px);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 700px;
+  padding: 3em 2em 0 2em;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  padding-bottom: 0;
+}
+
+/* HERO SELECTOR (Stepper style) */
+.hero-select-row.hero-select-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5em;
+}
+
+.hero-arrow {
+  font-size: 2.5rem !important;
+  color: #f8b2ca !important;
+  background: #e3f2fd !important;
+  border-radius: 50% !important;
+  transition: background 0.2s, transform 0.1s;
+}
+.hero-arrow:hover {
+  background: #bbdefb !important;
+  transform: scale(1.1);
+}
+
+.hero-stepper-label {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 1.2em;
+  padding: 0.3em 1.2em;
+  box-shadow: 0 2px 8px rgba(80,80,160,0.08);
+  min-width: 280px;
+  justify-content: center;
+}
+
+.hero-stepper-continent {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f8b2ca;
+}
+
+/* MODERN TEXT BLOCK */
+.hero-modern-text {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-radius: 1.5em;
+  background: linear-gradient(90deg, #e3f2fd 0%, #fce4ec 100%);
+  color: #888;
+  font-size: 1.15rem;
+  font-weight: 400;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  letter-spacing: 0.1px;
+}
+
+.hero-modern-text .highlight {
+  font-weight: 600;
+  color: #f8b2ca;
+}
+
+/* CHAT SECTION */
+.chat-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 2px 8px rgba(80,80,160,0.08);
+  padding: 0.7em 1em;
+}
+
+.input-row .MuiTextField-root {
+  flex: 1;
+  background: #f5f7fa;
+  border-radius: 0.8em;
+}
+
+.input-row .MuiButton-root {
+  height: 52px;
+  width: 52px;
+  min-width: 52px;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-row .MuiButton-root:hover {
+  transform: scale(1.1);
+}
+.input-row .MuiButton-root:active {
+  transform: scale(0.95);
+}
+.input-row .MuiButton-root::before {
+  content: "▶️";
+}
+
+.input-row .MuiOutlinedInput-root,
+.input-row .MuiInputBase-root {
+  color: #1976d2 !important;
+}
+.input-row .MuiOutlinedInput-input::placeholder {
+  color: #90caf9 !important;
+  opacity: 1;
+}
+
+/* Style the label of the MUI TextField in the input row */
+.input-row .MuiInputLabel-root {
+  color: #1976d2 !important; /* Same blue as user message and placeholder */
+  opacity: 1;
+  font-weight: 500;
+}
+
+/* When the label is focused (floats above) */
+.input-row .MuiInputLabel-root.Mui-focused {
+  color: #1976d2 !important;
+}
+
+/* CHAT WINDOW */
+.chat-window {
+  border-radius: 1.5em !important;
+  padding: 1.5em 1em;
+  min-height: 250px;
+  box-shadow: 0 2px 8px rgba(80,80,160,0.08);
+  margin-bottom: 1em;
+  margin-top: 3em;
+  width: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Align items vertically without centering horizontally */
+  justify-content: center; /* Centers the message bubbles vertically */
+}
+.chat-window.MuiPaper-root {
+  background: transparent !important;
+  box-shadow: 0 2px 8px rgba(80, 80, 160, 0.247);
+}
+
+.chat-message-row {
+  margin-bottom: 1em;
+  display: flex;
+}
+.chat-message-row.user {
+  justify-content: flex-end;
+}
+.chat-message-row.assistant {
+  justify-content: flex-start;
+}
+.chat-message-bubble {
+  padding: 0.7em 1.2em;
+  border-radius: 1.2em;
+  max-width: 80%;
+  word-break: break-word;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 4px rgba(80,80,160,0.04);
+}
+.chat-message-bubble.user {
+  background: #f3f9fd; /* Lighter tint leaning towards white */
+  color: #1976d2;
+  border-bottom-right-radius: 0.4em;
+}
+.chat-message-bubble.assistant {
+  background: #fdeef4; /* Lighter tint leaning towards white */
+  color: #fa92b6;
+  border-bottom-left-radius: 0.4em;
+}
+
+/* DISCLAIMER */
+.disclaimer {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  font-size: 0.8rem !important; /* Adjusted font size with !important */
+  font-weight: 400;
+  color: #8888888f;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+  padding: 0.7em 1em;
+  box-shadow: none;
+  border-radius: 0;
+  background: none;
+}
+
+/* SIDEBAR STYLES */
+.sidebar-drawer {
+  transition: width 225ms cubic-bezier(0.4,0,0.6,1);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #fff;
+}
+.sidebar-drawer-open {
+  width: 360px !important;
+  padding: 24px !important;
+}
+.sidebar-drawer-collapsed {
+  width: 120px !important;
+  padding: 8px !important;
+}
+.sidebar-arrow {
+  color: #f8b2ca !important;
+  background: #e3f2fd !important;
+  border-radius: 50% !important;
+  transition: background 0.2s, transform 0.1s;
+}
+.sidebar-arrow:hover {
+  background: #bbdefb !important;
+  transform: scale(1.1);
+}
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+.sidebar-header-collapsed {
+  justify-content: center;
+}
+.sidebar-divider {
+  margin: 16px 0 !important;
+}
+.sidebar-list .MuiListItemText-primary {
+  font-size: 14px !important;
+}
+.sidebar-info,
+.sidebar-info2,
+.sidebar-info3 {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #757575;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+

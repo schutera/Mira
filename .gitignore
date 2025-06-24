@@ -151,6 +151,9 @@ venv.bak/
 .dmypy.json
 dmypy.json
 
+# Datasets
+datasets/**/*
+
 # Pyre type checker
 .pyre/
 
