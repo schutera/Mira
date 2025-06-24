@@ -1,10 +1,5 @@
-<h1>The Global Dialogue between Humans and Machines.</h1>
+# The Global Dialogue between Humans and Machines.
 
-<style>
-h1, h2, h3 {
-    color:rgb(248, 144, 179) !important;
-}
-</style>
 
 **What if AI could be guided by the real values, hopes, and worries of people around the world?**  
 **What if you could channel these human perspectives to shape the behavior of AI implicitly and automatically?**
