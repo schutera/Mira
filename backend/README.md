@@ -54,13 +54,13 @@ pip install -r ../requirements.txt
 > **Note:**  
 > For full setup instructions, see the official [OpenAI Cookbook Tutorial](https://cookbook.openai.com/articles/gpt-oss/run-locally-ollama).
 
-Want to run GPT-OSS on your own machine instead of using OpenAI's hosted models? Don'T want to spend money on an OpenAI API key? This optional setup allows you to host the `gpt-oss:20b` model locally via [Ollama](https://ollama.com), enabling offline inference and full control over your LLM environment.
+Want to run GPT-OSS on your own machine for free instead of using OpenAI's hosted models? This optional setup allows you to host the `gpt-oss:20b` model locally via [Ollama](https://ollama.com), enabling offline inference and full control over your LLM environment.
 
 #### Requirements
 
 - Install Ollama for your operating system.
-- Recommended: ≥16GB VRAM or unified memory (Apple Silicon or high-end consumer GPUs).\  
-Running slower on CPU instead if GPU specifications are not met.
+- Recommended: ≥16GB VRAM or unified memory (Apple Silicon or high-end consumer GPUs).
+Running slower on CPU instead, if GPU specifications are not met.
 
 #### Pull & launch the Model
 > **Note:** This will launch a local server at `http://localhost:11434/v1`.
