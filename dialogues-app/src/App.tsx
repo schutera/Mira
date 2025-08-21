@@ -24,30 +24,52 @@ function App() {
   const guardrailValues = guardrailConfig[guardrailsOn ? "Guardrail On" : "Guardrail Off"];
 
   const handleSend = async () => {
-    if (!input.trim()) return;
-    setMessages((msgs) => [...msgs, { role: "user", content: input }]);
+    if (!input.trim()) {
+      return;
+    }
+
+    // 1) Add the user’s message
+    setMessages((msgs) => [
+      ...msgs,
+      { role: "user", content: input },
+    ]);
+
     const prompt = input;
     setInput("");
 
     try {
+      // 2) Hit your backend
       const res = await fetch("http://localhost:8000/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, guardrails: guardrailsOn }), // send guardrails flag
+        body: JSON.stringify({ prompt, guardrails: guardrailsOn }),
       });
       const data = await res.json();
-      setMessages((msgs) => [
-        ...msgs,
-        { role: "assistant", content: data.response },
-      ]);
+
+      // 3) Prepare Mira’s reply object
+      const assistantMessage = {
+        role: "assistant" as const,
+        content: data.response,
+      };
+
+      // 4) Append Mira’s reply
+      setMessages((msgs) => [...msgs, assistantMessage]);
+
+      // 🗑 Removed Step 5: Speech synthesis
     } catch (e) {
       console.error("Error occurred while sending message:", e);
+
+      // 5) Fallback reply
       setMessages((msgs) => [
         ...msgs,
-        { role: "assistant", content: " Sorry, the AI system is taking a bio break 🌱" },
+        {
+          role: "assistant" as const,
+          content: "Sorry, the AI system is taking a bio break 🌱",
+        },
       ]);
     }
   };
+
 
   return (
     <div className="app-root">
