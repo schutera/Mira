@@ -17,13 +17,13 @@ const VoiceInput: React.FC<VoiceInputProps> = ({ onTranscriptFinal }) => {
     const prev = prevListening.current;
     const hasText = transcript && transcript.trim().length > 0;
 
-    // Case 1: just stopped & already have transcript
+    // If just stopped & already have transcript
     if (prev && !listening && hasText) {
       onTranscriptFinal(transcript.trim());
       resetTranscript();
     }
 
-    // Case 2: already stopped, transcript arrived after stop
+    // If already stopped, transcript arrived after stop
     if (!listening && !prev && hasText) {
       onTranscriptFinal(transcript.trim());
       resetTranscript();
@@ -44,7 +44,7 @@ const VoiceInput: React.FC<VoiceInputProps> = ({ onTranscriptFinal }) => {
       SpeechRecognition.startListening({
         continuous: false,
         interimResults: false,
-        lang: "en-US", // force language each time
+        lang: "en-US",
       });
     }
   };

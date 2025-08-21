@@ -28,7 +28,6 @@ function App() {
       return;
     }
 
-    // 1) Add the user’s message
     setMessages((msgs) => [
       ...msgs,
       { role: "user", content: input },
@@ -38,28 +37,23 @@ function App() {
     setInput("");
 
     try {
-      // 2) Hit your backend
       const res = await fetch("http://localhost:8000/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt, guardrails: guardrailsOn }),
+        body: JSON.stringify({ prompt, guardrails: guardrailsOn }), // send guardrails flag
       });
       const data = await res.json();
 
-      // 3) Prepare Mira’s reply object
       const assistantMessage = {
         role: "assistant" as const,
         content: data.response,
       };
 
-      // 4) Append Mira’s reply
       setMessages((msgs) => [...msgs, assistantMessage]);
 
-      // 🗑 Removed Step 5: Speech synthesis
     } catch (e) {
       console.error("Error occurred while sending message:", e);
 
-      // 5) Fallback reply
       setMessages((msgs) => [
         ...msgs,
         {
@@ -69,7 +63,6 @@ function App() {
       ]);
     }
   };
-
 
   return (
     <div className="app-root">

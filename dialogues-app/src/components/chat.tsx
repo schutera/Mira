@@ -14,6 +14,7 @@ interface ChatProps {
   messages: Message[];
 }
 
+
 const Chat: React.FC<ChatProps> = ({ input, setInput, handleSend, messages }) => {
   const displayMessages = messages.slice(-2);
 
