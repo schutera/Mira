@@ -49,13 +49,36 @@ source .venv/bin/activate
 pip install -r ../requirements.txt
 ```
 
-### 4️⃣ Configure Environment Variables
+### 4️⃣ (Optional) Run GPT-OSS Locally with Ollama
+
+> **Note:**  
+> For full setup instructions, see the official [OpenAI Cookbook Tutorial](https://cookbook.openai.com/articles/gpt-oss/run-locally-ollama).
+
+Want to run GPT-OSS on your own machine for free instead of using OpenAI's hosted models? This optional setup allows you to host the `gpt-oss:20b` model locally via [Ollama](https://ollama.com), enabling offline inference and full control over your LLM environment.
+
+#### Requirements
+
+- Install Ollama for your operating system.
+- Recommended: ≥16GB VRAM or unified memory (Apple Silicon or high-end consumer GPUs).
+Running slower on CPU instead, if GPU specifications are not met.
+
+#### Pull & launch the Model
+> **Note:** This will launch a local server at `http://localhost:11434/v1`.
+
+```bash
+ollama pull gpt-oss:20b
+ollama run gpt-oss:20b
+```
+
+### 5️⃣ Configure Environment Variables
 
 Create a `.env` file or export your OpenAI API key:
 
 ```bash
 export OPENAI_API_KEY=sk-...
 ```
+
+If you are running your own Ollama server, add the environment variable `LOCAL="True"` to your `.env` file as well, or export as described above.
 
 ---
 
